@@ -8,7 +8,7 @@ const client = createClient({
     port: 6379
 });
 
-client.on("error", function(err){
+client.on("error", function (err) {
     console.error("Error encountered: ", err);
 });
 
@@ -54,10 +54,6 @@ app.get('/character/:id', async (req, res) => {
     } catch (error) {
         return res.status(error.response.code).json({ message: error.message });
     }
-});
-
-app.get('/hello', (req, res) => {
-    res.json({message: "hola", date: new Date().getFullYear()});
 });
 
 async function main() {
